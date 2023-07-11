@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { send, sendHover } from "../assets";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const formRef = useRef();
@@ -65,7 +66,28 @@ const Contact = () => {
       flex gap-10 overflow-hidden"
     >
       <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75] bg-jet p-8 rounded-2xl">
-        <p className={styles.sectionSubText}>Contattami</p>
+        <p className={styles.sectionSubText} style={{ display: "flex" }}>
+          Contattami{" "}
+          <span style={{ display: "flex" }}>
+            <a
+              href="https://www.linkedin.com/in/luigi-di-fraia-full-stack-developer/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginLeft: "10px", marginRight: "10px" }}
+            >
+              <FaLinkedin size={20} className="text-taupe" />
+            </a>
+            <a
+              href="https://github.com/Luigi160397"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginLeft: "10px", marginRight: "10px" }}
+            >
+              <FaGithub size={20} className="text-taupe" />
+            </a>
+          </span>
+        </p>
+
         <h3 className={styles.sectionHeadTextLight}>Contatti.</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-10 flex flex-col gap-6 font-poppins">
